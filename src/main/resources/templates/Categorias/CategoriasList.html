@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:include="layouts/layout::plantilla">
-
 <head>
 	<title th:fragment="titulo">Listado de categorias</title>
 </head>
@@ -13,39 +12,37 @@
 				data-target="#ModalAddCategoria">✚ Nueva Categoria</button>
 		</div>
 		<div class="row justify-content-center align-items-center col-10 offset-1">
-			<h1 style="margin-bottom: 20px;">Listado de Categorias</h1>
+			<h1 style="margin-bottom: 20px;">Lista de Categorias</h1>
 		</div>
-		<table class="table col-10 offset-1">
-			<thead class="thead-dark">
-				<tr>
-					<th>ID</th>
-					<th>Categoria</th>
-					<th>Editar</th>
-					<th>Eliminar</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="i : ${items}">
-					<td th:text="${i.idCategoria}"></td>
-					<td th:text="${i.nombreCategoria}"></td>
-					<td>
-						<!--form method="post" action="/editar">
+		<div class="container">
+			<table class="table col-10 offset-1" id="miTabla" cellspacing="0" width="100%">
+				<thead class="thead-dark">
+					<tr>
+						<th>ID</th>
+						<th>Categoria</th>
+						<th>Editar</th>
+						<th>Eliminar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="i : ${items}">
+						<td th:text="${i.idCategoria}"></td>
+						<td th:text="${i.nombreCategoria}"></td>
+						<td>
+							<!--form method="post" action="/editar">
 					      <input type="hidden" name="id_edit" th:value="${i.idCategoria}"-->
-						<a name="modificar" id="modificar" class="btn btn-outline-primary"
-							th:href="@{'/categoria/modificar/' + ${i.idCategoria}}" role="button">Editar</a>
-						<!-- /form-->
-					</td>
-					<td>
-						<a class="btn btn-outline-danger delete" href="#eliminar"
-							th:href="@{'/categoria/eliminar/' + ${i.idCategoria}}" data-toggle="modal"
-							data-target="#eliminar"
-							>Eliminar</a>
-					</td>
-
-				</tr>
-			</tbody>
-		</table>
-
+							<a name="modificar" id="modificar" class="btn btn-outline-primary"
+								th:href="@{'/categoria/modificar/' + ${i.idCategoria}}" role="button">Editar</a>
+							<!-- /form-->
+						</td>
+						<td>
+							<a class="btn btn-outline-danger delete"
+								th:href="@{'/categoria/eliminar/' + ${i.idCategoria}}">Eliminar</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
 		<!-- The Modal -->
 		<div class="modal fade" id="ModalAddCategoria">
@@ -97,12 +94,6 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		$('table').find('tr').click(function () {
-			console.log('You clicked row ' + ($(this).index() + 1));
-			console.log($('table tr[' + $(this).index() + '] td:eq(0)').text());
-		})	
-	</script>
 </body>
 
 </html>
