@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.personal.ofm.entity.Roles;
 import com.personal.ofm.entity.Usuarios;
-import com.personal.ofm.repository.ICategorias;
 import com.personal.ofm.repository.IRoles;
 import com.personal.ofm.repository.IUsuarios;
 
