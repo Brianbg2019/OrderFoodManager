@@ -5,5 +5,4 @@ import com.personal.ofm.entity.Usuarios;
 
 @Repository
 public interface IUsuarios extends CrudRepository<Usuarios, Long> {
-
 }

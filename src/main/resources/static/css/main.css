@@ -190,7 +190,6 @@ iframe {
 
 .wrap-login100 {
   width: 1170px;
-  background: #fff ;
   overflow: hidden;
   display: -webkit-box;
   display: -webkit-flex;
@@ -385,7 +384,7 @@ input.input100 {
     width: 60%;
     padding-left: 30px;
     padding-right: 30px;
-    background-color: rgba(10,126,202,1);
+    background-color: rgba(10,126,202,0.8);
   }
 
   .login100-more {
