@@ -43,14 +43,14 @@ public class ProductoController {
 		m.addAttribute("items", (List<Productos>) iproductos.findAll());
 		List<Categorias> categoria = (List<Categorias>) icategorias.findAll();
 		m.addAttribute("categoria", categoria);
-		return "/productos/producto";
+		return "/productos/ProductosList";
 	}
 	
 	@GetMapping(value = "guardar")
 	public String guardar(Model m) {
 		List<Categorias> categoria = (List<Categorias>) icategorias.findAll();
 		m.addAttribute("categoria", categoria);
-		return "/productos/producto";
+		return "/productos/ProductosList";
 	}
 	@PostMapping(value = "guardar")
 	public String save(@RequestParam String nombreProducto, @RequestParam Long categoria, @RequestParam float precio) {
@@ -90,8 +90,4 @@ public class ProductoController {
 		iproductos.delete(pro);
 		return "redirect:/producto/listar";
 	}
-	
-
-	
-
 }
